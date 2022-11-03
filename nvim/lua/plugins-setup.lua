@@ -32,6 +32,14 @@ return packer.startup(function(use)
 	use("navarasu/onedark.nvim")
 	use("tribela/vim-transparent")
 	use("olimorris/onedarkpro.nvim")
+	use("marko-cerovac/material.nvim")
+	use("EdenEast/nightfox.nvim")
+	use("rmehri01/onenord.nvim")
+	use("lunarvim/synthwave84.nvim")
+	use("JoosepAlviste/palenightfall.nvim")
+	use("ghifarit53/tokyonight-vim")
+
+	use("norcalli/nvim-colorizer.lua")
 
 	use({
 		"mrshmllow/document-color.nvim",
@@ -40,6 +48,15 @@ return packer.startup(function(use)
 				-- Default options
 				mode = "foreground", -- "background" | "foreground" | "single"
 			})
+		end,
+	})
+
+	--wordwrapping
+	use({
+		"andrewferrier/wrapping.nvim",
+		config = function()
+			require("wrapping").setup()
+			require("wrapping").soft_wrap_mode()
 		end,
 	})
 
@@ -91,6 +108,8 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
+	use("terryma/vim-multiple-cursors") --multiple cursor like vscode and sublime text
+
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
@@ -115,6 +134,9 @@ return packer.startup(function(use)
 		"romgrk/barbar.nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
+
+	--matching tags
+	use("leafOfTree/vim-matchtag")
 
 	if packer_bootstrap then
 		require("packer").sync()

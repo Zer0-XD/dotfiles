@@ -7,7 +7,7 @@ require("colorizer").setup({
 	"css",
 	"javascript",
 	html = {
-		mode = "foreground",
+		mode = "background",
 	},
 })
 
@@ -18,7 +18,7 @@ require("colorizer").setup({
 	"css",
 	"javascript",
 	html = { mode = "background" },
-}, { mode = "foreground" })
+}, { mode = "" })
 
 -- Use the `default_options` as the second parameter, which uses
 -- `foreground` for every mode. This is the inverse of the previous
