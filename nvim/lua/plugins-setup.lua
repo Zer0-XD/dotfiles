@@ -29,6 +29,7 @@ end
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
+	-- color schemes
 	use("navarasu/onedark.nvim")
 	use("tribela/vim-transparent")
 	use("olimorris/onedarkpro.nvim")
@@ -37,7 +38,11 @@ return packer.startup(function(use)
 	use("rmehri01/onenord.nvim")
 	use("lunarvim/synthwave84.nvim")
 	use("JoosepAlviste/palenightfall.nvim")
-	use("ghifarit53/tokyonight-vim")
+	-- use("ghifarit53/tokyonight-vim")
+	use("folke/tokyonight.nvim")
+
+	use("Lunarvim/onedarker")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	use("norcalli/nvim-colorizer.lua")
 
@@ -63,6 +68,8 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
+
+	use("rcarriga/nvim-notify") --nvim enhanced error notification
 
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
@@ -137,6 +144,19 @@ return packer.startup(function(use)
 
 	--matching tags
 	use("leafOfTree/vim-matchtag")
+
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
