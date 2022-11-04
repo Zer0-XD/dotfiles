@@ -18,7 +18,7 @@ require("colorizer").setup({
 	"css",
 	"javascript",
 	html = { mode = "background" },
-}, { mode = "" })
+}, { mode = "background" })
 
 -- Use the `default_options` as the second parameter, which uses
 -- `foreground` for every mode. This is the inverse of the previous
@@ -26,7 +26,7 @@ require("colorizer").setup({
 require("colorizer").setup({
 	"*", -- Highlight all files, but customize some others.
 	css = { rgb_fn = true }, -- Enable parsing rgb(...) functions in css.
-	html = { names = false }, -- Disable parsing "names" like Blue or Gray
+	html = { names = true }, -- parsing "names" like Blue or Gray
 })
 
 -- Exclude some filetypes from highlighting by using `!`

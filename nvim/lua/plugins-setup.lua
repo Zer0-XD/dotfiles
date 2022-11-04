@@ -46,7 +46,7 @@ return packer.startup(function(use)
 		config = function()
 			require("document-color").setup({
 				-- Default options
-				mode = "foreground", -- "background" | "foreground" | "single"
+				mode = "background", -- "background" | "foreground" | "single"
 			})
 		end,
 	})

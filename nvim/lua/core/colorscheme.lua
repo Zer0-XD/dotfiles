@@ -8,24 +8,24 @@
 -- 		},
 -- 	},
 -- })
+--
+require("onedark").setup({
+	code_style = {
+		comments = "italic",
+		functions = "italic,bold",
+		strings = "bold",
+		variables = "bold",
+	},
+	transparent = true,
+	colors = { hint = "orange", error = "#cc0113" },
+	highlights = {
+		["@function.builtin"] = { fg = "#9aaffa", fmt = "italic" },
+	},
+})
 
---synthwave84 setup
--- require("synthwave84").setup({
--- 	glow = {
--- 		error_msg = true,
--- 		type2 = true,
--- 		func = true,
--- 		keyword = true,
--- 		operator = false,
--- 		buffer_current_target = true,
--- 		buffer_visible_target = true,
--- 		buffer_inactive_target = true,
--- 	},
--- })
+vim.cmd("colorscheme onedark")
 
-vim.cmd("colorscheme tokyonight")
-
-local status, _ = pcall(vim.cmd, "colorscheme tokyonight")
+local status, _ = pcall(vim.cmd, "colorscheme onedark")
 
 if not status then
 	print("Colorscheme not found...")
