@@ -40,6 +40,7 @@ return packer.startup(function(use)
 	use("JoosepAlviste/palenightfall.nvim")
 	-- use("ghifarit53/tokyonight-vim")
 	use("folke/tokyonight.nvim")
+	use("rebelot/kanagawa.nvim")
 
 	use("Lunarvim/onedarker")
 	use({ "catppuccin/nvim", as = "catppuccin" })
@@ -69,7 +70,7 @@ return packer.startup(function(use)
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
-	use("rcarriga/nvim-notify") --nvim enhanced error notification
+	-- use("rcarriga/nvim-notify") --nvim enhanced error notification
 
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
