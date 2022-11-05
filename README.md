@@ -6,4 +6,4 @@ nvim config that i use for react and frontend work
 
 ```git clone https://github.com/Zer0-XD/dotfiles.git ~/.config/```
 
-![alt-text](https://i.imgur.com/zyDLbtH.png)
+![screenshot](https://i.imgur.com/SyNbPVX.png)
