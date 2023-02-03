@@ -35,4 +35,9 @@ treesitter.setup({
 	},
 	-- auto install above language parsers
 	auto_install = true,
+
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
 })

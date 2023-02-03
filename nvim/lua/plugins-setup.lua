@@ -30,20 +30,23 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- color schemes
-	use("navarasu/onedark.nvim")
+	-- use("navarasu/onedark.nvim")
 	use("tribela/vim-transparent")
-	use("olimorris/onedarkpro.nvim")
-	use("marko-cerovac/material.nvim")
-	use("EdenEast/nightfox.nvim")
-	use("rmehri01/onenord.nvim")
-	use("lunarvim/synthwave84.nvim")
-	use("JoosepAlviste/palenightfall.nvim")
+	-- use("olimorris/onedarkpro.nvim")
+	-- use("marko-cerovac/material.nvim")
+	-- use("EdenEast/nightfox.nvim")
+	-- use("rmehri01/onenord.nvim")
+	-- use("lunarvim/synthwave84.nvim")
+	-- use("JoosepAlviste/palenightfall.nvim")
+	-- use("marko-cerovac/material.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
 	-- use("ghifarit53/tokyonight-vim")
 	use("folke/tokyonight.nvim")
-	use("rebelot/kanagawa.nvim")
+	-- use("rebelot/kanagawa.nvim")
 
-	use("Lunarvim/onedarker")
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	-- use("Lunarvim/onedarker")
+	-- use({ "catppuccin/nvim", as = "catppuccin" })
 
 	use("norcalli/nvim-colorizer.lua")
 
@@ -52,10 +55,12 @@ return packer.startup(function(use)
 		config = function()
 			require("document-color").setup({
 				-- Default options
-				mode = "background", -- "background" | "foreground" | "single"
+				mode = "single", -- "background" | "foreground" | "single"
 			})
 		end,
 	})
+
+	use("petertriho/nvim-scrollbar") --scrollbar with linting
 
 	--wordwrapping
 	use({
@@ -77,7 +82,7 @@ return packer.startup(function(use)
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
 	-- commenting with gc
-	use("numToStr/Comment.nvim")
+	--[[ 	use("numToStr/Comment.nvim") ]]
 
 	-- file explorer
 	use("nvim-tree/nvim-tree.lua")
@@ -112,11 +117,22 @@ return packer.startup(function(use)
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+	-- use({
+	-- 	"glepnir/lspsaga.nvim",
+	-- 	branch = "main",
+	-- }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
-	use("terryma/vim-multiple-cursors") --multiple cursor like vscode and sublime text
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+	})
+
+	-- use("terryma/vim-multiple-cursors") --multiple cursor like vscode and sublime text
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
@@ -133,6 +149,12 @@ return packer.startup(function(use)
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
@@ -142,6 +164,8 @@ return packer.startup(function(use)
 		"romgrk/barbar.nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
+
+	use("fedepujol/move.nvim") -- move lines horizontally and vertically
 
 	--matching tags
 	use("leafOfTree/vim-matchtag")

@@ -2,6 +2,7 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
 
 --keymaps
 keymap.set("i", "jk", "<ESC>") --press jk to exit insert mode
@@ -56,3 +57,19 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 keymap.set("n", "<S-l>", ":bnext<CR>")
 keymap.set("n", "<S-h>", ":bprevious<CR>")
 keymap.set("n", "<leader>bc", "<Cmd>BufferClose<CR>")
+
+--move line up and down
+-- keymap.set("n", "A-UP", ":m+1 <cr>", opts)
+-- keymap.set("n", "A-DOWN", ":m-1 <cr>", opts)
+
+-- Normal-mode commands
+vim.keymap.set("n", "<A-DOWN>", ":MoveLine(1)<CR>", opts)
+vim.keymap.set("n", "<A-UP>", ":MoveLine(-1)<CR>", opts)
+vim.keymap.set("n", "<A-LEFT>", ":MoveHChar(-1)<CR>", opts)
+vim.keymap.set("n", "<A-RIGHT>", ":MoveHChar(1)<CR>", opts)
+
+-- Visual-mode commands
+vim.keymap.set("v", "<A-DOWN>", ":MoveBlock(1)<CR>", opts)
+vim.keymap.set("v", "<A-UP>", ":MoveBlock(-1)<CR>", opts)
+vim.keymap.set("v", "<A-LEFT>", ":MoveHBlock(-1)<CR>", opts)
+vim.keymap.set("v", "<A-RIGHT>", ":MoveHBlock(1)<CR>", opts)
