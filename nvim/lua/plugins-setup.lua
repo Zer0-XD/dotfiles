@@ -37,12 +37,13 @@ return packer.startup(function(use)
 	-- use("EdenEast/nightfox.nvim")
 	-- use("rmehri01/onenord.nvim")
 	-- use("lunarvim/synthwave84.nvim")
-	-- use("JoosepAlviste/palenightfall.nvim")
+	use("JoosepAlviste/palenightfall.nvim")
 	-- use("marko-cerovac/material.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	-- use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- use("ghifarit53/tokyonight-vim")
-	use("folke/tokyonight.nvim")
+	-- use("folke/tokyonight.nvim")
+	use("tiagovla/tokyodark.nvim")
 	-- use("rebelot/kanagawa.nvim")
 
 	-- use("Lunarvim/onedarker")
@@ -55,7 +56,7 @@ return packer.startup(function(use)
 		config = function()
 			require("document-color").setup({
 				-- Default options
-				mode = "single", -- "background" | "foreground" | "single"
+				mode = "background", -- "background" | "foreground" | "single"
 			})
 		end,
 	})
