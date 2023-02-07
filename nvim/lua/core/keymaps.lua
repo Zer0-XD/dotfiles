@@ -5,7 +5,7 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 --keymaps
-keymap.set("i", "jk", "<ESC>") --press jk to exit insert mode
+-- keymap.set("i", "jk", "<ESC>") --press jk to exit insert mode
 
 keymap.set("n", "<leader>nh", ":nohl<CR>") --clear search highlights
 
@@ -50,7 +50,7 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
--- restart lsp server (not on youtube nvim video)
+-- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
 -- Navigate buffers
@@ -59,9 +59,6 @@ keymap.set("n", "<S-h>", ":bprevious<CR>")
 keymap.set("n", "<leader>bc", "<Cmd>BufferClose<CR>")
 
 --move line up and down
--- keymap.set("n", "A-UP", ":m+1 <cr>", opts)
--- keymap.set("n", "A-DOWN", ":m-1 <cr>", opts)
-
 -- Normal-mode commands
 vim.keymap.set("n", "<A-DOWN>", ":MoveLine(1)<CR>", opts)
 vim.keymap.set("n", "<A-UP>", ":MoveLine(-1)<CR>", opts)

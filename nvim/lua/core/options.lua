@@ -5,19 +5,19 @@ opt.relativenumber = false
 opt.number = true
 
 --tabs and indent
-opt.tabstop = 2
-opt.shiftwidth =2 
+opt.tabstop = 4
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 
---line wrapping 
-opt.wrap= false
+--line wrapping
+opt.wrap = false
 
---search 
+--search
 opt.ignorecase = true
 opt.smartcase = true
 
---curosr line 
+--curosr line
 opt.cursorline = true
 
 -- appearance
@@ -34,7 +34,5 @@ opt.clipboard:append("unnamedplus")
 --split windows
 opt.splitright = true
 opt.splitbelow = true
-
-
 
 opt.iskeyword:append("-")
