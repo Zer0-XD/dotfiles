@@ -157,6 +157,7 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use("lukas-reineke/indent-blankline.nvim") --indentlines
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
