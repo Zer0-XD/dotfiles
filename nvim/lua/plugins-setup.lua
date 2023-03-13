@@ -50,14 +50,26 @@ return packer.startup(function(use)
 	-- use({ "catppuccin/nvim", as = "catppuccin" })
 
 	use("norcalli/nvim-colorizer.lua")
+	-- use("NvChad/nvim-colorizer.lua")
+
+	-- use({
+	-- 	"mrshmllow/document-color.nvim",
+	-- 	config = function()
+	-- 		require("document-color").setup({
+	-- 			-- Default options
+	-- 			mode = "background", -- "background" | "foreground" | "single"
+	-- 		})
+	-- 	end,
+	-- })
 
 	use({
-		"mrshmllow/document-color.nvim",
+		"themaxmarchuk/tailwindcss-colors.nvim",
+		-- load only on require("tailwindcss-colors")
+		module = "tailwindcss-colors",
+		-- run the setup function after plugin is loaded
 		config = function()
-			require("document-color").setup({
-				-- Default options
-				mode = "background", -- "background" | "foreground" | "single"
-			})
+			-- pass config options here (or nothing to use defaults)
+			require("tailwindcss-colors").setup()
 		end,
 	})
 
