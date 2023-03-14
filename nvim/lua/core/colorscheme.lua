@@ -68,8 +68,26 @@ require("kanagawa").setup({
 	transparent = false, -- do not set background color
 	dimInactive = true, -- dim inactive window `:h hl-NormalNC`
 	globalStatus = true, -- adjust window separators highlight for laststatus=3
-	terminalColors = true, -- define vim.g.terminal_color_{0,17}
-	theme = "dark", -- Load "default" theme or the experimental "light" theme
+	terminalColors = false, -- define vim.g.terminal_color_{0,17}
+	theme = "wave", -- Load "default" theme or the experimental "light" theme
+	overrides = function(colors)
+		local theme = colors.theme
+		return {
+			TelescopeNormal = { bg = colors.bg_dim },
+			TelescopeBorder = { fg = colors.bg_dim, bg = colors.bg_dim },
+			TelescopeTitle = { fg = colors.bg_light3, bold = true },
+			TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+			TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+			TelescopeResultsNormal = { bg = "#1a1a22" },
+			TelescopeResultsBorder = { fg = "#1a1a22", bg = "#1a1a22" },
+			TelescopePreviewNormal = { bg = colors.bg_dim },
+			TelescopePreviewBorder = { bg = colors.bg_dim, fg = colors.bg_dim },
+			Pmenu = { fg = theme.ui.shade2, bg = theme.ui.bg_p2 },
+			PmenuSel = { fg = "NONE", bg = theme.ui.bg_p1 },
+			PmenuSbar = { bg = theme.ui.bg_m2 },
+			PmenuThumb = { bg = theme.ui.bg_p3 },
+		}
+	end,
 })
 
 -- setup must be called before loading

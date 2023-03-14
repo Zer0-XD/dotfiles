@@ -55,9 +55,21 @@ cmp.setup({
 	-- 	}),
 	--
 	window = {
-		completion = {
-			col_offset = -3, -- align the abbr and word on cursor (due to fields order below)
-		},
+		completion = cmp.config.window.bordered({
+			col_offset = -3,
+			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			border = "rounded",
+		}),
+		documentation = cmp.config.window.bordered({
+			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+		}),
+
+		-- completion = {
+		-- 	col_offset = -3, -- align the abbr and word on cursor (due to fields order below)
+		-- },
+	},
+	experimental = {
+		ghost_text = true,
 	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" },

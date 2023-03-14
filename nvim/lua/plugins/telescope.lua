@@ -14,7 +14,15 @@ end
 telescope.setup({
 	-- configure custom mappings
 	defaults = {
-		-- path_display = { "smart" },
+		path_display = { "smart" },
+		layout_config = {
+			horizontal = {
+				prompt_position = "bottom",
+				preview_width = 0.55,
+				results_width = 0.45,
+			},
+		},
+		winblend = 5,
 		file_ignore_patterns = {
 			".git/",
 			"node_modules",
@@ -35,3 +43,4 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("media_files")
