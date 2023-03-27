@@ -1,3 +1,5 @@
+require("impatient") -- for improving load time
+
 require("core.options")
 require("core.keymaps")
 require("plugins-setup")

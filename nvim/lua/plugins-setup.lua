@@ -29,6 +29,8 @@ end
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
+	use("lewis6991/impatient.nvim") --for improving load time
+
 	-- color schemes
 	-- use("navarasu/onedark.nvim")
 	use("tribela/vim-transparent")
